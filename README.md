@@ -24,7 +24,7 @@
     .game-container {
       background: #e8d5b5;
       padding: clamp(1rem, 4vw, 2rem) clamp(1rem, 5vw, 2.5rem) clamp(1.25rem, 5vw, 2.5rem);
-      border-radius: 80px 80px 40px 40px;
+      border-radius: 60px 60px 40px 40px;
       box-shadow: 0 30px 40px rgba(0,0,0,0.7);
       display: flex;
       flex-direction: column;
@@ -54,9 +54,10 @@
     }
     #chess-board {
       display: grid;
-      grid-template-columns: repeat(8, 1fr);
-      grid-template-rows: repeat(8, 1fr);
-      width: min(560px, 84vw);
+      grid-template-columns: repeat(8, minmax(0, 1fr));
+      grid-template-rows: repeat(8, minmax(0, 1fr));
+      /* board = viewport minus body padding, container border/padding, wrapper padding */
+      width: min(560px, calc(100vw - 24px - 12px - 2 * clamp(1rem, 5vw, 2.5rem) - 2 * clamp(8px, 2.5vw, 18px)));
       aspect-ratio: 1 / 1;
       border: 4px solid #3d2c1e;
       border-radius: 8px;
@@ -67,7 +68,10 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: clamp(1.5rem, 8vw, 3.1rem);
+      font-size: clamp(1.1rem, 6.5vw, 3.1rem);
+      min-width: 0;
+      min-height: 0;
+      overflow: hidden;
       font-weight: 500;
       text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
       cursor: pointer;
