@@ -24,7 +24,7 @@
     .game-container {
       background: #e8d5b5;
       padding: clamp(1rem, 4vw, 2rem) clamp(1rem, 5vw, 2.5rem) clamp(1.25rem, 5vw, 2.5rem);
-      border-radius: 60px 60px 40px 40px;
+      border-radius: 80px 80px 40px 40px;
       box-shadow: 0 30px 40px rgba(0,0,0,0.7);
       display: flex;
       flex-direction: column;
